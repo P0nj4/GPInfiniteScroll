@@ -14,6 +14,8 @@
 		4B3047561B4D9BC700561825 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B3047551B4D9BC700561825 /* Images.xcassets */; };
 		4B3047591B4D9BC700561825 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B3047571B4D9BC700561825 /* LaunchScreen.xib */; };
 		4B3047651B4D9BC700561825 /* GPInfiniteScrollTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3047641B4D9BC700561825 /* GPInfiniteScrollTests.m */; };
+		4B3047731B4D9C0500561825 /* infiniteItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3047701B4D9C0500561825 /* infiniteItemView.m */; };
+		4B3047741B4D9C0500561825 /* InfiniteScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3047721B4D9C0500561825 /* InfiniteScroll.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		4B30475E1B4D9BC700561825 /* GPInfiniteScrollTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GPInfiniteScrollTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B3047631B4D9BC700561825 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B3047641B4D9BC700561825 /* GPInfiniteScrollTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPInfiniteScrollTests.m; sourceTree = "<group>"; };
+		4B30476F1B4D9C0500561825 /* infiniteItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = infiniteItemView.h; sourceTree = "<group>"; };
+		4B3047701B4D9C0500561825 /* infiniteItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = infiniteItemView.m; sourceTree = "<group>"; };
+		4B3047711B4D9C0500561825 /* InfiniteScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfiniteScroll.h; sourceTree = "<group>"; };
+		4B3047721B4D9C0500561825 /* InfiniteScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfiniteScroll.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,7 @@
 		4B3047471B4D9BC700561825 /* GPInfiniteScroll */ = {
 			isa = PBXGroup;
 			children = (
+				4B30476E1B4D9C0500561825 /* Lib */,
 				4B30474C1B4D9BC700561825 /* AppDelegate.h */,
 				4B30474D1B4D9BC700561825 /* AppDelegate.m */,
 				4B30474F1B4D9BC700561825 /* ViewController.h */,
@@ -117,6 +124,17 @@
 				4B3047631B4D9BC700561825 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4B30476E1B4D9C0500561825 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				4B30476F1B4D9C0500561825 /* infiniteItemView.h */,
+				4B3047701B4D9C0500561825 /* infiniteItemView.m */,
+				4B3047711B4D9C0500561825 /* InfiniteScroll.h */,
+				4B3047721B4D9C0500561825 /* InfiniteScroll.m */,
+			);
+			path = Lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,8 +238,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B3047511B4D9BC700561825 /* ViewController.m in Sources */,
+				4B3047731B4D9C0500561825 /* infiniteItemView.m in Sources */,
 				4B30474E1B4D9BC700561825 /* AppDelegate.m in Sources */,
 				4B30474B1B4D9BC700561825 /* main.m in Sources */,
+				4B3047741B4D9C0500561825 /* InfiniteScroll.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
