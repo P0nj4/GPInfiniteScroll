@@ -70,11 +70,15 @@
 
 #pragma mark - Public Methods
 - (void)moveOneItemLeft {
+    if (self.datasource.count < 3)
+        return;
     if ((int)self.scroll.contentOffset.x % (int)self.bounds.size.width == 0)
         [self.scroll setContentOffset:CGPointMake(self.scroll.contentOffset.x - self.bounds.size.width, self.scroll.contentOffset.y) animated:YES];
 }
 
 - (void)moveOneItemRight {
+    if (self.datasource.count < 3)
+        return;
     if ((int)self.scroll.contentOffset.x % (int)self.bounds.size.width == 0)
         [self.scroll setContentOffset:CGPointMake(self.scroll.contentOffset.x + self.bounds.size.width, self.scroll.contentOffset.y) animated:YES];
 }
@@ -100,6 +104,9 @@
 }
 
 -(void)reorganizeViews {
+    if (self.datasource.count < 3)
+        return;
+    
     if (self.scroll.contentOffset.x == 0) {
         UIView *lastView = [self getLastView];
         
