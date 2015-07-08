@@ -19,4 +19,5 @@
 - (void)moveOneItemLeft;
 - (void)moveOneItemRight;
 - (instancetype)initWithFrame:(CGRect)frame datasource:(NSArray *)datasource delegate:(id<InfiniteScrollDelegate>)delegate;
+- (void)reloadData:(NSArray *)datasource;
 @end

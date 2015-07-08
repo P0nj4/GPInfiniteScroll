@@ -38,6 +38,17 @@
     return self;
 }
 
+- (void)reloadData:(NSArray *)datasource {
+    for (UIView *v in self.scroll.subviews) {
+        [v removeFromSuperview];
+    }
+    self.datasource = datasource;
+    [self addScrollViews];
+    self.scroll.contentSize = CGSizeMake(self.bounds.size.width * self.datasource.count, self.bounds.size.height);
+    self.scroll.contentOffset = CGPointMake(self.bounds.size.width, 0);
+
+}
+
 - (void)addScrollViews {
     for (int i = 0; i < self.datasource.count - 1; i++) {
         UIView *contentView = [self.delegate viewForContent:[self.datasource objectAtIndex:i] inFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)];

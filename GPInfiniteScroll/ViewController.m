@@ -34,7 +34,10 @@
 - (IBAction)moveRightPressed:(id)sender {
     [self.scroll moveOneItemRight];
 }
-
+- (IBAction)reloadPressed:(id)sender {
+    NSArray *texts = @[@"A", @"B", @"C", @"D", @"E"];
+    [self.scroll reloadData:texts];
+}
 
 - (UIView *)viewForContent:(id)content inFrame:(CGRect)frame {
     
