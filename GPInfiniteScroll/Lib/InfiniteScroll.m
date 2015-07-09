@@ -45,8 +45,11 @@
     self.datasource = datasource;
     [self addScrollViews];
     self.scroll.contentSize = CGSizeMake(self.bounds.size.width * self.datasource.count, self.bounds.size.height);
+    if (self.scroll.contentOffset.x == self.bounds.size.width) {
+        [self notifyFocusView];
+    }
     self.scroll.contentOffset = CGPointMake(self.bounds.size.width, 0);
-
+    
 }
 
 - (void)addScrollViews {
@@ -92,6 +95,11 @@
     
     if ((int)self.scroll.contentOffset.x % (int)self.bounds.size.width == 0)
         [self notifyFocusView];
+    else
+    {
+        [self.delegate viewWillLoseFocus:self.focusedView.contentView];
+        self.focusedView = nil;
+    }
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
@@ -177,7 +185,7 @@
                 [self.delegate viewDidLoseFocus:self.focusedView.contentView];
             self.focusedView = ((infiniteItemView *)v);
             [self.delegate viewDidFocus:((infiniteItemView *)v).contentView];
-
+            
         }
     }
 }
