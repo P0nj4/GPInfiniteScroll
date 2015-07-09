@@ -11,8 +11,10 @@
 @protocol InfiniteScrollDelegate <NSObject>
 - (void)viewDidFocus:(UIView *)view;
 - (void)viewDidLoseFocus:(UIView *)view;
-- (void)viewWillLoseFocus:(UIView *)view;
 - (UIView *)viewForContent:(id)content inFrame:(CGRect)frame;
+@optional
+- (void)viewWillLoseFocus:(UIView *)view;
+
 @end
 
 @interface InfiniteScroll : UIView

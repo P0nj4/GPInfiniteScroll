@@ -35,7 +35,7 @@
     [self.scroll moveOneItemRight];
 }
 - (IBAction)reloadPressed:(id)sender {
-    NSArray *texts = @[@"A", @"B"];
+    NSArray *texts = @[@"A", @"B", @"C"];
     [self.scroll reloadData:texts];
 }
 

@@ -17,6 +17,20 @@
 @end
 
 @implementation InfiniteScroll
+@synthesize datasource = _datasource;
+
+- (void)setDatasource:(NSArray *)datasource {
+    if (datasource.count == 0) {
+        return;
+    }
+    if (datasource.count == 2) {
+        _datasource = [NSArray arrayWithObjects:[datasource objectAtIndex:0], [datasource objectAtIndex:1], [datasource objectAtIndex:0], [datasource objectAtIndex:1], nil];
+    } else if (datasource.count == 1) {
+        _datasource = [NSArray arrayWithObjects:[datasource objectAtIndex:0], [datasource objectAtIndex:0], [datasource objectAtIndex:0], [datasource objectAtIndex:0], nil];
+    }else {
+        _datasource = datasource;
+    }
+}
 
 - (instancetype)initWithFrame:(CGRect)frame datasource:(NSArray *)datasource delegate:(id<InfiniteScrollDelegate>)delegate {
     self = [super initWithFrame:frame];
@@ -43,6 +57,7 @@
         [v removeFromSuperview];
     }
     self.datasource = datasource;
+    
     [self addScrollViews];
     self.scroll.contentSize = CGSizeMake(self.bounds.size.width * self.datasource.count, self.bounds.size.height);
     if (self.scroll.contentOffset.x == self.bounds.size.width) {
@@ -97,7 +112,9 @@
         [self notifyFocusView];
     else
     {
-        [self.delegate viewWillLoseFocus:self.focusedView.contentView];
+        if ([self.delegate respondsToSelector:@selector(viewWillLoseFocus:)]) {
+            [self.delegate viewWillLoseFocus:self.focusedView.contentView];
+        }
         self.focusedView = nil;
     }
 }
